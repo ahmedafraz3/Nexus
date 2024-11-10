@@ -1,0 +1,785 @@
+/* Home.module.css */
+
+.container {
+    font-family: Arial, sans-serif;
+    color: #000;
+    padding: 20px;
+  }
+  
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+   background: linear-gradient(to bottom, lightblue, white);
+   position: relative;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+.logoContainer {
+    display: flex;
+    align-items: center;
+    
+  }
+  
+  .logoImage {
+    transition: transform 0.3s ease;
+      width: 100px; /* Set the desired width */
+  height: 100px; /* Set the desired height (same as width to keep it circular) */
+  border-radius: 50%; /* Make it circular */
+  object-fit: cover;
+  }
+  
+  .logoImage:hover {
+    transform: scale(1.1);
+  }
+  
+  /* Other styles remain the same */
+  
+  .nav ul {
+    display: flex;
+    gap: 20px;
+    list-style: none;
+  }
+  
+  .nav ul li {
+    cursor: pointer;
+    font-size: 1.1rem;
+    position: relative;
+    padding-bottom: 5px;
+    transition: color 0.3s ease; /* Color change on hover */
+}
+
+.nav ul li:hover {
+  color: #0070f3; /* Change color on hover */
+}
+
+.nav ul li:hover::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 2px;
+    background-color: #0070f3;
+    transition: width 0.3s ease-in-out;
+    width: 100%;
+  }
+  
+  .headerOptions {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+  }
+  
+  .searchBar {
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+  
+  .headerButton {
+    padding: 10px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    font-size: 1rem;
+    position: relative;
+  }
+  
+  .headerButton:hover {
+    color: #0070f3;
+  }
+  
+  .headerButton::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: -2px;
+    height: 2px;
+    background-color: #0070f3;
+    transition: width 0.3s ease-in-out;
+    width: 0;
+  }
+  
+  .headerButton:hover::after {
+    width: 100%;
+  }
+  
+  .verticalLine {
+    width: 1px;
+    height: 40px;
+    background-color: #5f5d5d;
+  }
+  
+  .dropdownMenu {
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+ 
+  .submenu {
+    position: absolute;
+    top: 40px; 
+    left: 0;
+    background-color: white;
+    border: 2px solid #ccc;
+    border-radius: 10px;
+    padding: 20px; 
+    list-style: none;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    animation: fadeIn 0.2s ease-in-out;
+    z-index: 10; 
+}
+
+.submenu li {
+    text-align: justify; /* Justified alignment */
+    position: relative; 
+    padding: 5px 0; 
+}
+
+.submenu li:hover {
+    background-color: #f0f0f0;
+}
+
+.submenu li::after {
+    content: '';
+    display: block;
+    height: 2px;
+    background-color: blue; /* Change this to your desired color */
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 0; /* Initial width */
+    transition: width 0.3s; /* Smooth width transition */
+}
+
+.submenu li:hover::after {
+    width: 100%; 
+}
+
+.submenu li {
+    list-style-type: disc; /* Add bullet points */
+    padding-left: 20px; /* Add padding to indent the bullet points */
+}
+
+  
+  .mainContent {
+    display: flex;
+    justify-content: space-between;
+    padding: 60px;
+    background-color: #f8f8f8;
+  }
+  
+  .textSection {
+    max-width: 50%;
+  }
+  
+  .dynamicText {
+    font-size: 4rem;
+    line-height: 1.2;
+    transition: opacity 0.8s ease-in-out;
+    margin-bottom: 20px;
+  }
+  
+  .highlight {
+    color: #0070f3;
+  }
+  
+  .largeFont {
+    font-size: 1.3rem;
+    line-height: 1.4;
+    padding-top: 20px;
+  }
+  .buttons {
+    display: flex;
+    gap: 20px;
+    margin-top: 50px;
+  }
+  
+  .primaryButton,
+  .secondaryButton {
+    position: relative; /* For the pseudo-element positioning */
+    padding: 12px 25px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    overflow: hidden; /* Prevent overflow for the pseudo-element */
+    transition: color 0.3s ease; /* Smooth transition for text color */
+  }
+  
+  .primaryButton {
+    background-color: #0070f3;
+    color: #fff;
+  }
+  
+  .primaryButton::before {
+    content: ""; /* Empty content for the pseudo-element */
+    position: absolute; /* Position it absolutely */
+    top: 50%; /* Center vertically */
+    left: 50%; /* Center horizontally */
+    width: 300%; /* Width for the background fill effect */
+    height: 300%; /* Height for the background fill effect */
+    background-color: rgba(255, 255, 255, 0.3); /* Light background effect */
+    border-radius: 50%; /* Rounded corners */
+    transform: translate(-50%, -50%) scale(0); /* Start scaled down */
+    transition: transform 0.4s ease; /* Transition for the scaling effect */
+    z-index: 0; /* Behind the text */
+  }
+  
+  .primaryButton:hover::before {
+    transform: translate(-50%, -50%) scale(1); /* Scale up on hover */
+  }
+  
+  .primaryButton:hover {
+    color: #fff; /* Keep text color white on hover */
+  }
+  
+  .secondaryButton {
+    position: relative; /* Positioning context for the pseudo-element */
+    background-color: transparent; /* Transparent background initially */
+    border: 2px solid #0070f3; /* Border color */
+    color: #0070f3; /* Text color */
+    overflow: hidden; /* Prevent overflow for the pseudo-element */
+    padding: 12px 25px; /* Add padding for the button */
+    cursor: pointer; /* Pointer cursor on hover */
+  }
+  
+  .secondaryButton::before {
+    content: ""; /* Empty content for the pseudo-element */
+    position: absolute; /* Position it absolutely */
+    top: 0; /* Align to the top */
+    left: 0; /* Align to the left */
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    background-color: #0070f3; /* Background color for the fill */
+    transform: translateX(-100%); /* Start off-screen to the left */
+    transition: transform 0.5s ease; /* Transition for the left to right effect */
+    z-index: 0; /* Behind the text */
+    border-radius: 5px; /* Rounded corners */
+  }
+  
+  .secondaryButton:hover::before {
+    transform: translateX(0); /* Move into view on hover */
+  }
+  
+  .secondaryButton:hover {
+    color: #fff; /* Change text color on hover */
+  }
+  
+  .secondaryButton span {
+    position: relative; /* Position relative to allow layering */
+    z-index: 1; /* Ensure text is above the pseudo-element */
+    transition: color 0.5s ease; /* Smooth text color transition */
+  }
+  
+  
+
+.imageSection {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    position: relative;
+    max-width: 50%;
+    z-index: 1; /* Keep images below the submenu */
+   
+    
+}
+
+  
+  .imageWrapper:first-child {
+    transform: translate(40px, 0); /* Move first section right */
+    position: relative;
+    display: flex;
+    justify-content: end;
+   
+    
+  }
+  
+  .imageWrapper:last-child {
+    transform: translate(-350px, -100px); /* Move second section up */
+    position: relative;
+    display: flex;
+    justify-content: end;
+  }
+  
+  /* Image styles */
+  .image,
+  .imageSecond {
+    width: 350px; /* Adjusted size for testing */
+    height: auto;
+    border-radius: 10px;
+    opacity: 0;
+    animation: fadeIn 1s ease-in-out forwards;
+  }
+  
+  @keyframes fadeIn {
+    0% {
+      opacity: 0;
+      transform: scale(0.95);
+    }
+    100% {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+  
+  
+  .curvedLineContainer {
+    display: flex;
+    justify-content: center;
+    margin: 20px 0;
+}
+
+.curvedLine {
+    width: 100%;
+    max-width: 800px;
+}
+
+.nexusContainer {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px 0;
+    background-color: #f8f8f8;
+}
+
+.nexusLeft {
+    width: 45%;
+    background-color: #0070f3;
+    color: white;
+    padding: 20px;
+    border-radius: 8px;
+}
+
+
+.nexusRight {
+  width: 45%;
+  position: relative; 
+  overflow: hidden; 
+}
+
+.nexusRight::before {
+  content: "";
+  position: absolute;
+  bottom: 0; 
+  left: 0;
+  right: 0;
+  height: 100%; 
+  background-color: rgba(173, 216, 230, 0.8); 
+  transform: translateY(100%); 
+  transition: transform 0.5s ease, opacity 0.5s ease;
+  opacity: 0;
+  z-index: 0; 
+}
+
+.nexusRight:hover::before {
+  transform: translateY(0); /* Move the fill into view */
+  opacity: 1; /* Show the fill */
+}
+
+.nexusRight * {
+  position: relative; /* Ensure content is above the hover effect */
+  z-index: 1; /* Bring the content above the hover effect */
+}
+
+.nexusTitle {
+    font-size: 2rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.nexusTitle span {
+    display: inline-block;
+}
+
+.nexusTitle .blueText {
+    color: #0070f3;
+}
+
+.nexusTitle .blackText {
+    color: black;
+}
+
+.nexusHeader {
+    background: linear-gradient(to right, #0070f3, #00c4ff);
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.learnMoreButton {
+    background-color: transparent;
+    border: 2px solid #0070f3;
+    color: #0070f3;
+    padding: 8px 16px;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+.learnMoreButton:hover {
+    background-color: #0070f3;
+    color: white;
+}
+
+.pointsContainer {
+    display: flex;
+    flex-direction: column;
+    margin-top: 15px;
+}
+
+.point {
+    background-color: rgba(255, 255, 255, 0.8);
+    border-radius: 20px;
+    padding: 10px;
+    margin: 5px 0;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    font-weight: bold;
+    color: rgb(120, 115, 115);
+    opacity: 0;
+    transform: translateY(-50px);
+}
+
+.animatePoint {
+    animation: slideInUp 0.8s ease forwards;
+}
+
+@keyframes slideInUp {
+    0% {
+        opacity: 0;
+        transform: translateY(-50px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Style for the new section */
+.videoTextSection {
+  display: flex;
+  background-color: #0070f3; /* Blue background */
+  padding: 50px;
+  color: white;
+}
+
+.leftVideo {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.videoElement {
+  width: 100%;
+  max-width: 600px;
+  border-radius: 10px;
+}
+
+.rightText {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-left: 20px;
+}
+
+.heading {
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.boldParagraph {
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.ovalButton {
+  background-color: white;
+  color: #0070f3;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 50px;
+  font-size: 1rem;
+  cursor: pointer;
+  margin-bottom: 20px;
+}
+
+.ovalButton:hover {
+  background-color: #005bb5;
+  color: white;
+}
+
+.disclaimer {
+  font-size: 0.9rem;
+  line-height: 1.5;
+}
+.trustedSection {
+  display: flex;
+  flex-direction: column; /* Stack elements vertically */
+  align-items: center; /* Center items horizontally */
+  padding: 50px 20px; /* Adjusted padding */
+  background-color: #f4f4f4; 
+  position: relative;
+}
+
+.trustedTitle {
+  font-size: 2.5rem;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.trustedSubtitle {
+  font-size: 1.2rem;
+  margin-bottom: 40px;
+}
+
+.countingNumbers {
+  display: flex;
+  justify-content: center;
+  gap: 50px;
+}
+
+.counterItem {
+  text-align: center;
+}
+
+.counter {
+  font-size: 3rem;
+  color: #0070f3;
+  font-weight: bold;
+}
+
+.counterLabel {
+  margin-top: 10px;
+  font-size: 1.1rem;
+}
+
+/* Optional: To maintain a nice background and rounded borders */
+.trustedSection {
+  border-radius: 20px; /* Add rounded corners */
+  background-color: #f9f9f9; /* Light background for contrast */
+}
+
+.trustedSection::before,
+.trustedSection::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 100%;
+  height: 20px;
+  background: linear-gradient(to right, transparent, #0070f3, transparent);
+  border-radius: 20px;
+  transform: translateX(-50%);
+}
+
+.industrySolutionSection {
+  display: flex; /* Flexbox layout for the section */
+  justify-content: space-between; /* Space between left and right sections */
+  padding: 50px; /* Padding around the section */
+  background-color: #f4f4f4; /* Background color for contrast */
+  border-radius: 10px; /* Rounded corners for the section */
+}
+
+.leftSection {
+  flex: 1; /* Takes up available space */
+  margin-right: 20px; /* Space to the right */
+}
+
+.boldHeading {
+  font-weight: bold;
+  font-size: 2.5rem; /* Font size */
+  margin-bottom: 20px;
+  margin-top: 90px;
+}
+
+.industryButton {
+  background-color: #0070f3; /* Button color */
+  color: white; /* Text color */
+  border: none; /* No border */
+  border-radius: 50px; /* Oval shape */
+  padding: 10px 20px; /* Padding inside the button */
+  cursor: pointer; /* Pointer cursor on hover */
+  transition: background-color 0.3s ease; /* Smooth transition */
+  margin-top: 50px; /* Top margin */
+}
+
+.industryButton:hover {
+  background-color: #005bb5; /* Darker shade on hover */
+}
+
+.industrySolutionsRight {
+  display: flex; /* Flex container for boxes */
+  flex-wrap: wrap; /* Wrap boxes if needed */
+  flex: 1; /* Takes up available space */
+}
+
+.industryBox {
+  position: relative; /* Position for the pseudo-element */
+  overflow: hidden; /* Prevent content overflow during hover */
+  flex: 1 1 calc(50% - 20px); /* Two boxes per row with some space */
+  background-color: #fff; /* Background color */
+  border: 2px solid transparent; /* Initial border */
+  border-radius: 10px; /* Rounded corners */
+  border-color: #0070f3;
+  padding: 40px; /* Padding inside the box */
+  margin: 10px; /* Space between boxes */
+  text-align: center; /* Center align content */
+  transition: color 0.3s ease; /* Smooth transition for text color */
+  cursor: pointer; /* Pointer cursor on hover */
+}
+
+.industryBox::before {
+  content: ""; /* Empty content for the pseudo-element */
+  position: absolute; /* Position it absolutely */
+  top: 0; /* Align to the top */
+  left: 0; /* Align to the left */
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  background-color: #0070f3; /* Background color for the fill */
+  transform: translate(-100%, -100%); /* Start off-screen */
+  transition: transform 0.5s ease; /* Transition for diagonal movement */
+  z-index: 0; /* Behind the content */
+}
+
+.industryBox:hover::before {
+  transform: translate(0, 0); /* Move to fill the box */
+}
+
+.industryBox:hover {
+  color: white; /* Change text color on hover */
+}
+
+.industryBox p {
+  position: relative; /* For stacking order */
+  z-index: 1; /* On top of the pseudo-element */
+}
+
+.industryBox::after {
+  content: "➜"; /* Arrow symbol */
+  position: absolute; /* Position it absolutely */
+  bottom: 10px; /* Position at the bottom */
+  right: 10px; /* Position at the right */
+  font-size: 1.5rem; /* Size of the arrow */
+  color: white; /* Arrow color */
+  opacity: 0; /* Hidden initially */
+  transition: opacity 0.3s ease; /* Smooth transition for opacity */
+}
+
+.industryBox:hover::after {
+  opacity: 1; /* Show arrow on hover */
+}
+
+
+
+
+
+.footer {
+  background-color: #2c3e50; 
+  padding: 40px 20px;
+  color: #ffffff; 
+  animation: fadeIn 0.5s ease-in-out;
+
+}
+  
+
+.footerContent {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+.footerSection {
+  flex: 1;
+  min-width: 200px;
+  margin: 20px;
+}
+
+.footerSection h4 {
+  font-size: 1.5rem;
+  margin-bottom: 15px;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+.footerSection h4, .footerBottom p {
+  color: #ffffff; 
+}
+
+.footerSection h4:hover {
+  color: #0070f3; 
+}
+
+.footerSection ul {
+  list-style: none;
+  padding: 0;
+  cursor: pointer;
+}
+
+.footerSection li {
+  margin: 8px 0;
+  transition: color 0.3s ease;
+}
+.footerSection li, .footerBottom p {
+  color: #bdc3c7; 
+}
+.footerSection li:hover {
+  color: #0070f3; 
+}
+
+.footerSocial {
+  text-align: center;
+}
+
+.footerSocial .socialLinks {
+  display: flex;
+  justify-content: center; 
+  margin-top: 10px;
+}
+
+.footerSocial .socialLinks a {
+  margin: 0 10px;
+  font-size: 1.5rem; 
+  color: #faf8f8; 
+  transition: color 0.3s ease;
+}
+
+.footerSocial .socialLinks a:hover {
+  color: #0070f3; 
+}
+
+
+
+.footerBottom {
+  text-align: center;
+  margin-top: 20px;
+  font-size: 0.9rem;
+  color: #777;
+}
+
+/* Animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.footer {
+  transition: all 0.5s ease-in-out;
+  opacity: 0; 
+}
+
+.footer.animate {
+  opacity: 1; 
+  transform: translateY(0); 
+}
