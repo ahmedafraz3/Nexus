@@ -7,6 +7,9 @@ const config: Config = {
     "./app/**/*.{js,ts,jsx,tsx,mdx}",
   ],
   theme: {
+    backgroundImage: {
+      'custom-gradient': 'linear-gradient(to right, #00102a, #000104)',
+    },
     extend: {
       colors: {
         background: "var(--background)",

@@ -7,6 +7,8 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'; // Import Font
 import { faFacebook, faTwitter, faLinkedin, faInstagram } from '@fortawesome/free-brands-svg-icons'; // Import social media icons
 import { faSchool, faPiggyBank, faBuilding, faHospital, faIndustry, faStore } from '@fortawesome/free-solid-svg-icons'; // Import industry icons
 import Link from "next/link";
+import join from "../tokenjoining/page"
+
 
 
 const HomePage = () => {
@@ -100,41 +102,43 @@ const HomePage = () => {
             src="/images/logo.png"  
             alt="Nexus Logo"
             width={100}
-            height={50}
-            className={styles.logoImage}
+            height={20}
+            className={`${styles.logoImage} rounded-full shadow-2xl p-2 m-4`}
           />
         </div>
         <nav className={styles.nav}>
-          <ul>
-            <li>Products</li>
-            <li>Solutions</li>
-            <li>Resources</li>
-            <li>Plans & Pricing</li>
+          <ul className="">
+            <li style={{ cursor: 'pointer' }}>Products</li>
+            <li style={{ cursor: 'pointer' }}>Solutions</li>
+            <li style={{ cursor: 'pointer' }}>Resources</li>
+            <li style={{ cursor: 'pointer' }}>Plans & Pricing</li>
           </ul>
         </nav>
 
         <div className={styles.headerOptions}>
           <input type="text" placeholder="Search" className={styles.searchBar} />
-          <button className={styles.headerButton}>Support</button>
-          <button className={styles.headerButton}>Request a Demo</button>
+          <button style={{ cursor: 'pointer' }} className={styles.headerButton}>Support</button>
+          <button style={{ cursor: 'pointer' }} className={styles.headerButton}>Request a Demo</button>
 
           <div className={styles.verticalLine}></ div>
 
           <div className={styles.dropdownMenu}>
-            <button className={styles.headerButton}>Join</button>
-            <div className={styles.headerButton} onMouseEnter={toggleHostMenu} onMouseLeave={toggleHostMenu}>
+           <Link href="/tokenjoining">
+           <button className={'${styles.headerButton} hover:text-blue-600'}>Join</button>
+           </Link>
+            <div className={'${styles.headerButton} hover:text-blue-600'} onMouseEnter={toggleHostMenu} onMouseLeave={toggleHostMenu}>
               Host
               {isHostMenuVisible && (
-                <ul className={styles.submenu}>
+                <ul style={{ cursor: 'pointer' }} className={styles.submenu}>
                   <li>With Video On</li>
                   <li>With Video Off</li>
                   <li>Screen Share Only</li>
                 </ul>
               )}
             </div>
-            <div className="./signIn">
+            <div className="./room">
             <Link href="/signIn">
-                <button className={styles.headerButton}>Sign In</button>
+                <button style={{ cursor: 'pointer' }} className={styles.headerButton}>Sign In</button>
             </Link>
         </div>
           </div>
@@ -144,25 +148,28 @@ const HomePage = () => {
      </div>
 
      {/* mobile div */}
-   <div className="flex justify-between lg:hidden">
+   <div className="flex   justify-between lg:hidden">
     {/* logo */}
    <div className="size-full">
-   <div className={styles.logoContainer}>
-          <Image
+   <div style={{ cursor: 'pointer' }} className={styles.logoContainer}>
+      
+         <Image
             src="/images/logo.png"  
             alt="Nexus Logo"
             width={100}
-            height={50}
-            className={styles.logoImage}
+            height={20}
+            className={`${styles.logoImage} rounded-full p-2 m-4`}
+          
           />
+        
         </div>
    </div>
 
    <div className="flex items-center space-x-4">
   <div>
-    <h1 className="text-xl font-bold">Join</h1>
+    <h1 style={{ cursor: 'pointer' }} className="text-xl font-bold hover:text-blue-600">Join</h1>
   </div>
-  <div className="text-lg font-semibold">
+  <div style={{ cursor: 'pointer' }} className="text-lg font-semibold hover:text-blue-600">
     Host
   </div>
   <div>
@@ -179,15 +186,15 @@ const HomePage = () => {
 
 
    </div>
-   <div className="flex-col justify-end">
+   <div className="flex-col justify-end lg:hidden ">
   {/* Mobile menu */}
   {isMobileMenuOpen && (
     <div className={`${styles.mobileMenu} bg-white border-b border-gray-300 shadow-lg`}>
-      <ul className="space-y-4 py-4 px-6">
-        <li className="border-b border-gray-200 pb-2">Products</li>
-        <li className="border-b border-gray-200 pb-2">Solutions</li>
-        <li className="border-b border-gray-200 pb-2">Resources</li>
-        <li className="border-b border-gray-200 pb-2">Plans & Pricing</li>
+      <ul style={{ cursor: 'pointer' }} className="space-y-4 py-4 px-6">
+        <li className="border-b hover:text-[#0070f3] cursor-pointer border-gray-200 pb-2">Products</li>
+        <li className="border-b hover:text-[#0070f3]  border-gray-200 pb-2">Solutions</li>
+        <li className="border-b hover:text-[#0070f3] border-gray-200 pb-2">Resources</li>
+        <li className="border-b hover:text-[#0070f3] border-gray-200 pb-2">Plans & Pricing</li>
       </ul>
     </div>
   )}
@@ -198,8 +205,9 @@ const HomePage = () => {
 
       {/* Main Content Section */}
    
-  <div className="hidden md:block">
-  <main className={styles.mainContent}>
+  <div className="hidden lg:flex justify-center items-center bg-[#f8f8f8] ">
+ <div className="flex-col">
+ <main className={styles.mainContent}>
         <div className={styles.textSection} >
           <h1 className={styles.dynamicText}>
             {texts[currentIndex].text.split("AI companion")[0]}
@@ -217,11 +225,41 @@ const HomePage = () => {
 
         </div>
         </main>
+ </div>
+ <div className="flex-col bg-[#f8f8f8] pr-8 max-w-xl">
+ <div className="imageSection hidden lg:flex ">
+          <div className={styles.imageWrapper}>
+            <Image
+              src={texts[currentIndex].images[0]}
+              alt={`Image ${currentIndex * 2 + 1}`}
+              width={100}
+              height={100}
+              className={`${styles.image} ${styles.fadeIn} size-100`}
+            />
+          </div>
+          <div className={styles.imageWrapper}>
+            <Image
+              src={texts[currentIndex].images[1]}
+              alt={`Image ${currentIndex * 2 + 2}`}
+              width={400}
+              height={300}
+              className={`${styles.imageSecond} ${styles.fadeIn} size-100`}
+            />
+          </div>
+        </div>
+ </div>
+
+<div>
+
+
+</div>
+
+
   </div>
  
 
  {/* Main Content Section mobile*/}
-        <div className="flex-col space-x-2 p-4 justify-center md:hidden">
+ <div className="flex-col space-x-2 p-4 justify-center lg:hidden">
         <h1 className="text-4xl font-bold py-4">
             {texts[currentIndex].text.split("AI companion")[0]}
             <span className={styles.highlight}>AI companion</span>
@@ -229,9 +267,8 @@ const HomePage = () => {
           <p className={styles.largeFont}>
             Accomplish more with NEXUS Workplace: Your AI-first work platform featuring AI Companion 2.0, included at no extra cost.
           </p>
-        </div>
 
-        <div className="imageSection ">
+          <div className="imageSection ">
           <div className={styles.imageWrapper}>
             <Image
               src={texts[currentIndex].images[0]}
@@ -251,6 +288,11 @@ const HomePage = () => {
             />
           </div>
         </div>
+        </div>
+
+       
+
+    
       
 
         {/* Curved Line Section */}
