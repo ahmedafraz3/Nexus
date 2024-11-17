@@ -1,0 +1,13 @@
+# Ignore node_modules for frontend and backend
+mainpage/node_modules
+backend/node_modules
+backendmain/node_modules
+
+# Ignore build files
+frontend/.next
+
+# Ignore environment files
+frontend/.env
+
+# Ignore log files
+*.log
