@@ -161,9 +161,9 @@ const HomePage = () => {
              </Link>
 
               
-              <button onClick={handleNavigation}>
+              {/* <button onClick={handleNavigation}>
                 <li style={{ cursor: "pointer" }}>Dashboard</li>
-                </button>
+                </button> */}
              
       
    
@@ -363,9 +363,9 @@ const HomePage = () => {
                 Solutions
               </li>
               </Link>
-              <button onClick={handleNavigation}> <li className="border-b hover:text-[#0070f3] border-gray-200 pb-2">
+              {/* <button onClick={handleNavigation}> <li className="border-b hover:text-[#0070f3] border-gray-200 pb-2">
                 Dashboard
-              </li> </button>
+              </li> </button> */}
 
 
              
