@@ -1,5 +1,5 @@
 import Calendar from "../../components/Calender/page";
-import DefaultLayout from "@/components/Layouts/DefaultLayout";
+import DefaultLayout from "../../components/Layouts/DefaultLayout";
 
 export const metadata = {
   title: "Next.js Calender | Nexus - Next.js Dashboard Template",
