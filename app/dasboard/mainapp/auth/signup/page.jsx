@@ -1,8 +1,8 @@
 import React from "react";
 import Link from "next/link";
 import Image from "next/image";
-import Breadcrumb from "@/components/Breadcrumbs/Breadcrumb";
-import DefaultLayout from "@/components/Layouts/DefaultLayout";
+import Breadcrumb from "../../../components/Breadcrumbs/page";
+import DefaultLayout from "../../../components/Layouts/DefaultLayout";
 
 import logo from "../../../../../public/images/nexus-logo_o_bg.png"
 
