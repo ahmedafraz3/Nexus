@@ -130,10 +130,10 @@ const HomePage = () => {
 
   const router = useRouter();
 
-  const handleNavigation = () => {
-    // Programmatically navigate to the '/dasboard' route
-    router.push('/dasboard');
-  };
+  // const handleNavigation = () => {
+  //   // Programmatically navigate to the '/dasboard' route
+  //   router.push('/dasboard');
+  // };
 
   return (
     <div className={styles.container}>
