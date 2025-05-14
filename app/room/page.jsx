@@ -2,9 +2,9 @@
 import React, { useState, useEffect, useRef } from "react";
 import Head from "next/head";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faVideo, faMicrophone, faShareSquare, faSignOutAlt, faUserPlus, faTrash, faEdit } from "@fortawesome/free-solid-svg-icons";
+import { faVideo, faMicrophone, faShareSquare } from "@fortawesome/free-solid-svg-icons";
 import EmojiPicker from "emoji-picker-react";
-import Swal from "sweetalert2";
+// import Swal from "sweetalert2";
 import io from "socket.io-client";
 import Image from "next/image";
 import img1 from "../../public/images/loading.gif"
@@ -21,7 +21,7 @@ const Room = () => {
   const [shareScreen, setShareScreen] = useState(false);
   const [username, setUsername] = useState("");
   const [roomId] = useState("room-123");  // Example room ID
-  const [roomQR, setRoomQR] = useState(null);
+  // const [roomQR, setRoomQR] = useState(null);
   const [isEmojiPickerVisible, setIsEmojiPickerVisible] = useState(false);
 
   const socket = useRef(null);
@@ -274,6 +274,20 @@ const Room = () => {
 
         </div>
 
+        {/* <div className="flex-grow flex items-center justify-center">
+            <video
+              ref={localVideoRef}
+              autoPlay
+              muted
+              className="w-auto max-h-3/4 object-contain rounded-lg border-2 border-gray-700"
+            />
+          </div> */}
+
+
+
+
+
+
 {/* messages */}
 
             <div className="mt-6 bg-black">
@@ -313,12 +327,24 @@ const Room = () => {
             <button onClick={handleRoomQR} className="bg-blue-600 text-white p-3 rounded-full hover:bg-blue-700">
               Room QR Code
             </button>
-            {roomQR && (
+            {/* {roomQR && (
               <div className="mt-4">
                 <img src={roomQR} alt="Room QR Code" className="w-32 h-32" />
               </div>
-            )}
+            )} */}
           </div>
+
+        <div>
+        <Link href="/translation">
+        <button
+  className="fixed bottom-4 right-4 bg-blue-600 text-white p-4 rounded-full shadow-lg hover:bg-blue-700 transition duration-300"
+  onClick={() => alert('Transcription started!')} 
+  target="_blank"
+>
+  Transcription
+</button>
+        </Link>
+        </div>
 
 
         </div>

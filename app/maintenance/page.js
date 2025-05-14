@@ -1,11 +1,12 @@
 import Image from "next/image";
 import Link from "next/link";
-import logo from "../../public/images/logo.png"; // Ensure this path is correct
+import logo from "../../public/images/NEXUS_bg.png"; // Ensure this path is correct
+import logo1 from "../../public/images/nexus-logo_o_bg.png"; 
 import maintenanceGif from "../../public/images/maintenance.gif"; // Ensure this path is correct
 
 export default function Maintenance() {
   return (
-    <div className="min-h-screen flex flex-col  bg-gray-100 text-gray-800">
+    <div className="min-h-screen flex flex-col  bg-gray-100 text-gray-800 p-3 ">
       {/* Header */}
       <header className="w-full flex   shadow-lg   rounded-b-full">
         <div className=" mx-auto px-4 py-4 flex justify-between">
@@ -16,7 +17,7 @@ export default function Maintenance() {
     <Image src={logo} alt="Nexus logo" width={100} className="rounded-full" />
   </div>
   <div className="flex justify-end items-end">
-    <span className="ml-3 font-semibold text-2xl text-black">Nexus</span>
+    <span className="ml-3 font-semibold text-2xl text-blue-700">Nexus</span>
   </div>
 </div>
 
@@ -29,7 +30,7 @@ export default function Maintenance() {
       {/* Main Content */}
       <main className="flex-1 w-full flex items-center justify-center px-4">
         <div className="text-center max-w-lg">
-          <h1 className="text-3xl font-bold mb-4">
+          <h1 className="text-3xl font-bold mb-4 p-6">
             We have got something special in store for you
           </h1>
           <p className="text-lg mb-4">
@@ -37,30 +38,32 @@ export default function Maintenance() {
             Please check back soon.
           </p>
           <Link href="https://github.com/miroslavpejic85/mirotalksfu" passHref>
-            <div>
-              <Image src={maintenanceGif} alt="Maintenance mode" className="w-full max-w-sm mx-auto pulse" />
+            <div className="py-8 ">
+              <Image src={maintenanceGif} alt="Maintenance mode" 
+              
+              className="w-full max-w-xl rounded-lg mx-auto pulse" />
             </div>
           </Link>
         </div>
       </main>
 
       {/* Footer */}
-      <footer className="w-full bg-gray-800 text-gray-300 py-6 rounded-t-full">
+      <footer className="w-full bg-[#0070f3] text-gray-300 py-6 rounded-t-full">
         <div className="container mx-auto text-center">
           <div className="mb-4">
             <Link href="https://github.com/miroslavpejic85/mirotalksfu" passHref>
-              <div className="inline-flex items-center">
-                <Image src={logo} alt="Logo" width={100} height={48} />
+              <div className="inline-flex items-center shadow-4 rounded-full bg-black-2">
+                <Image src={logo1} alt="Logo" width={100} height={48} />
               </div>
             </Link>
           </div>
-          <p>Contact: <Link href="https://www.linkedin.com/in/muhammad-bilal-a21084244" passHref><span className="text-blue-500">Muhammad Bilal</span></Link></p>
+          <p className="text-white">Contact: <Link  href="https://www.linkedin.com/in/muhammad-bilal-a21084244" passHref><span className="text-white">Muhammad Bilal</span></Link></p>
           <div className="mt-4">
             <ul className="flex justify-center space-x-6">
               {/* Social Media Links */}
               <li>
                 <Link href="https://discord.gg/rgGYfeYW3N" passHref>
-                  <span className="sr-only">Discord</span>
+                  <span className="sr-only text-white">Discord</span>
                   {/* Replace with a Discord icon */}
                 </Link>
               </li>
@@ -84,7 +87,7 @@ export default function Maintenance() {
               </li>
             </ul>
           </div>
-          <div className="mt-4 text-sm text-gray-500">&copy; 2024 Nexus, all rights reserved</div>
+          <div className="mt-4 text-sm text-white">&copy; 2024 Nexus, all rights reserved</div>
         </div>
       </footer>
     </div>

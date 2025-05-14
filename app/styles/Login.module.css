@@ -1,0 +1,259 @@
+.container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background: linear-gradient(135deg, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.5)), url('/background.gif') center/cover no-repeat;
+    position: relative;
+    overflow: hidden;
+    
+  }
+  
+  .background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: -1;
+    background: rgba(0, 0, 0, 0.4);
+    filter: blur(8px);
+    background: linear-gradient(135deg, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.5)), url('/background.gif') center/cover no-repeat;
+    animation: gradientMove 6s ease infinite; /* Slow gradient animation */
+  }
+  
+  @keyframes gradientMove {
+    0% { background-position: 0% 0%; }
+    100% { background-position: 100% 100%; }
+  }
+  
+  /* Glass Sheet Effect */
+  .glassBox {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 90%;
+    max-width: 400px;
+    padding: 10px;
+    height: auto;
+    min-height: 10px; /* Reduced height */
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 15px;
+    box-shadow: 0 8px 32px rgba(31, 38, 135, 0.5);
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    backdrop-filter: blur(15px);
+    text-align: center;
+    animation: fadeIn 1.5s ease-in-out;
+  }
+  
+  /* Nexus Logo */
+  .logo {
+    margin-bottom: 20px;
+    margin-left: 20px;
+    animation: zoomIn 1.5s ease;
+    transition: transform 0.3s ease;
+  }
+  
+  .logo:hover {
+    transform: scale(1.05)  rotate(5deg);;
+  }
+  
+  /* Title */
+  .title {
+    font-size: 2rem;
+    font-weight: bold;
+    color: transparent; /* Make the text transparent */
+    background: linear-gradient(45deg, #6b92f7, #b67df8);
+    -webkit-background-clip: text; /* Webkit-specific property */
+    background-clip: text; /* Standard property (still not widely supported) */
+    margin-bottom: 20px;
+  }
+  
+  .error {
+    color: red; /* Set text color to red */
+    font-size: 14px; /* Optional: Adjust font size */
+    margin-top: 10px; /* Optional: Add spacing */
+  }
+  
+  .success {
+    color: green; /* Set text color to green */
+    font-size: 14px; /* Optional: Adjust font size */
+    margin-top: 10px; /* Optional: Add spacing */
+  }
+  
+  
+  /* Input Fields */
+  .inputBox {
+    position: relative;
+    margin: 15px 0;
+    width: 100%;
+    min-width: 350px; 
+  }
+  
+  .inputBox i {
+    position: absolute;
+    top: 50%;
+    left: 10px;
+    transform: translateY(-50%); /* Center icon vertically */
+    color: #fff;
+    font-size: 1.2rem;
+  }
+  
+  .inputBox input {
+    width: 100%;
+    padding: 12px 12px 12px 40px;
+    background: rgba(255, 255, 255, 0.15);
+    border-radius: 5px;
+    color: #fff;
+    font-size: 1rem;
+    outline: none;
+    transition: all 0.3s ease;
+  }
+  
+  .inputBox input:hover {
+    background: rgba(255, 255, 255, 0.3);
+  }
+  .inputBox.error input {
+    border-color: #f44336; /* Red border on error */
+    animation: shake 0.5s ease;
+  }
+  
+  @keyframes shake {
+    0% { transform: translateX(-5px); }
+    25% { transform: translateX(5px); }
+    50% { transform: translateX(-5px); }
+    75% { transform: translateX(5px); }
+    100% { transform: translateX(0); }
+  }
+  
+  /* Buttons and Options */
+  .submitButton,
+  .googleButton {
+    width: 100%;
+    min-width: 300px; 
+    padding: 12px;
+    margin-top: 10px;
+    background: linear-gradient(135deg, #6b92f7, #b67df8);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+    box-sizing: border-box; 
+  }
+  
+  .submitButton:hover,
+  .googleButton:hover {
+    transform: translateY(-2px);
+    background: linear-gradient(135deg, #b67df8, #6b92f7);
+  }
+  
+  /* Ripple effect on button */
+  .submitButton::after,
+  .googleButton::after {
+    content: '';
+    position: absolute;
+    width: 200%;
+    height: 200%;
+    top: -50%;
+    left: -50%;
+    background: rgba(255, 255, 255, 0.2);
+    opacity: 0;
+    transform: scale(0);
+    transition: transform 0.5s ease, opacity 0.5s ease;
+    border-radius: 50%;
+  }
+  
+  .submitButton:active::after,
+  .googleButton:active::after {
+    transform: scale(1);
+    opacity: 1;
+  }
+  
+  .options {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 15px;
+  }
+  
+  .forgotPassword {
+    color: #cfcfcf;
+    font-size: 0.9rem;
+    margin-bottom: 10px;
+    text-decoration: none;
+    transition: color 0.3s ease;
+    position: relative;
+  }
+  
+  .forgotPassword::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: #cfcfcf;
+    transform: scaleX(0);
+    transform-origin: right;
+    transition: transform 0.3s ease;
+  }
+  
+  .forgotPassword:hover::after {
+    transform: scaleX(1);
+    transform-origin: left;
+  }
+  
+  .or {
+    color: #b0b0b0;
+    margin: 10px 0;
+    font-size: 0.9rem;
+  }
+  
+  /* Create Account Link */
+  .createAccount {
+    color: #cfcfcf;
+    font-size: 0.9rem;
+    margin-top: 10px;
+    text-decoration: none;
+    transition: color 0.3s ease;
+    position: relative;
+  }
+  
+  .createAccount::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: #cfcfcf;
+    transform: scaleX(0);
+    transform-origin: right;
+    transition: transform 0.3s ease;
+  }
+  
+  .createAccount:hover {
+    color: #ffffff;
+  }
+  
+  .createAccount:hover::after {
+    transform: scaleX(1);
+    transform-origin: left;
+  }
+  
+  /* Animations */
+  @keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+  
+  @keyframes zoomIn {
+    from { transform: scale(0.5); opacity: 0; }
+    to { transform: scale(1); opacity: 1; }
+  } 
+  
+  
