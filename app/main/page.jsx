@@ -205,7 +205,7 @@ const HomePage = () => {
             <div className={styles.verticalLine}></div>
 
             <div className={styles.dropdownMenu}>
-              <Link href="http://localhost:3002/">
+              <Link href="https://nexuscommunication.vercel.app/">
                 <button
                   className={"${styles.headerButton} hover:text-blue-600"}
                 >
@@ -213,7 +213,7 @@ const HomePage = () => {
                 </button>
               </Link>
 
-              <Link href="http://localhost:3002/">
+              <Link href="https://nexuscommunication.vercel.app/">
                 <div
                   className={"${styles.headerButton} hover:text-blue-600"}
                   onMouseEnter={toggleHostMenu}
