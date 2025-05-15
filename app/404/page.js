@@ -152,15 +152,3 @@ export default function Custom404() {
   );
 }
 
-// API Route for Error Logging
-export async function logError(req, res) {
-  if (req.method === 'POST') {
-    const { error } = req.body;
-    console.error('Logged Error:', error);
-    // Here you can send the error to a logging service
-    res.status(200).json({ message: 'Error logged successfully' });
-  } else {
-    res.setHeader('Allow', ['POST']);
-    res.status(405).end(`Method ${req.method} Not Allowed`);
-  }
-}
