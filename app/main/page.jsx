@@ -303,7 +303,7 @@ const HomePage = () => {
         </div>
 
         <div className="flex items-center space-x-4">
-        <Link href="http://localhost:3002/">
+        <Link href="https://nexuscommunication.vercel.app/">
           <div>
             <h1
               style={{ cursor: "pointer" }}
@@ -313,7 +313,7 @@ const HomePage = () => {
             </h1>
           </div>
           </Link>
-          <Link href="http://localhost:3002/">
+          <Link href="https://nexuscommunication.vercel.app/">
           <div
             style={{ cursor: "pointer" }}
             className="text-lg font-semibold hover:text-blue-600"
