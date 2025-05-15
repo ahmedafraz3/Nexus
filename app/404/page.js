@@ -1,33 +1,7 @@
 "use client"
 // pages/404.js
 import Link from 'next/link';
-import { useEffect, useState } from 'react';
-
-// Google Analytics Component
-// const GA = () => {
-//   useEffect(() => {
-//     if (typeof window !== "undefined") {
-//       window.GA_INITIALIZED = true;
-//       // Initialize Google Analytics (replace with your GA ID)
-//       window.gtag('config', process.env.NEXT_PUBLIC_GA_ID, {
-//         page_path: window.location.pathname,
-//       });
-//     }
-//   }, []);
-
-//   return null;
-// };
-
-// Error Reporting Utility
-const reportError = (error) => {
-  fetch('/api/logError', {
-    method: 'POST',
-    headers: {
-      'Content-Type': 'application/json',
-    },
-    body: JSON.stringify({ error }),
-  });
-};
+import { useState } from 'react';
 
 // Search Bar Component
 const SearchBar = () => {
@@ -79,7 +53,6 @@ export default function Custom404() {
 
   return (
     <div className="min-h-screen flex flex-col bg-gray-100">
-      {/* <GA /> */}
       {/* Header */}
       <header className="bg-white shadow">
         <div className="container mx-auto px-4 py-6 flex items-center justify-between">
@@ -130,7 +103,7 @@ export default function Custom404() {
               </Link>
             </li>
             <li>
-              <Link href="https://www.facebook.com/ mirotalk" passHref>
+              <Link href="https://www.facebook.com/mirotalk" passHref>
                 Facebook
               </Link>
             </li>
@@ -151,4 +124,3 @@ export default function Custom404() {
     </div>
   );
 }
-
